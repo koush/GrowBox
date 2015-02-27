@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GrowBox</string>
+
+    <string name="launch_showbox">Launch a video from ShowBox homie.</string>
+</resources>
