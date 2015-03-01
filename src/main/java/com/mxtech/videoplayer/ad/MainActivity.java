@@ -3,7 +3,7 @@ package com.mxtech.videoplayer.ad;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-
+import android.os.Parcelable;
 
 public class MainActivity extends ActionBarActivity {
     public static final java.lang.String EXTRA_ITEM_HTTP_HEADERS = "android.media.intent.extra.HTTP_HEADERS";
@@ -27,6 +27,17 @@ public class MainActivity extends ActionBarActivity {
                 }
                 intent.putExtra(EXTRA_ITEM_HTTP_HEADERS, bundle);
             }
+
+            Parcelable[] subs = intent.getParcelableArrayExtra("subs");
+            if(subs != null){
+                intent.putExtra("subs",subs);
+            }
+
+            Parcelable[] subsEnable = intent.getParcelableArrayExtra("subs.enable");
+            if(subsEnable != null){
+                intent.putExtra("subs.enable",subsEnable);
+            }
+
             startActivity(intent);
             finish();
         }
